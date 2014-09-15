@@ -1,0 +1,107 @@
+<div ng-class="showDetails?'blur-content':''">
+    <header class="header">
+        <div class="desktopLogo">mobile
+            <span style="color:red; font-weight: 400;">Desktop</span>
+        </div>
+        <div class="user-info">
+            <div class="dropdown">
+                <a class="dropdown-toggle cursor-hand" id="dropdownMenu1" data-toggle="dropdown">
+    Mario Rossi
+    <span class="caret"></span>
+  </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Impostazioni</a>
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Esci</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Main content -->
+    <section class="main-section content">
+        <div class="row center-block">
+            <div class="app-container" ng-click="showDetails = true">
+                <div class="app-wrap center-block bg-aqua">
+                    <div class="app-content tags">
+                        <ul>
+                            <li ng-repeat="app in sistemiGovernoApps" class="{{app.tagClass}}">{{app.name}}</li>
+                        </ul>
+                    </div>
+                    <span class="app-footer">
+                        {{sistemiGovernoApps.length}} applicazioni <i class="fa fa-arrow-circle-right"></i>
+                    </span>
+                </div>
+                <div class="app-group center-block">
+                    Sistemi di governo
+                </div>
+            </div>
+            <div class="app-container">
+                <div class="app-wrap center-block bg-orange">
+                    <span class="badge bg-red">42</span>
+                    </a>
+                    <div class="app-content tags">
+                        <ul>
+                            <li class="tag1">Workflow Console</li>
+                            <li class="tag2">Isidoc - Sistema Documentale</li>
+                            <li class="tag3">Isidoc - Amministratore</li>
+                            <li class="tag2">Workflow Editor</li>
+                            <li class="tag4">Fogli informativi</li>
+                            <li class="tag3">FluxTX Console</li>
+                            <li class="tag2">Tickets Gestore</li>
+                        </ul>
+                    </div>
+                    <span class="app-footer">
+                        7 applicazioni <i class="fa fa-arrow-circle-right"></i>
+                    </span>
+                </div>
+                <div class="app-group center-block">
+                    Sistemi di Front End
+                </div>
+            </div>
+            <div class="app-container">
+                <div class="app-wrap center-block bg-teal">
+                    <div class="app-content tags">
+                        <ul>
+                            <li class="tag2">Gestore Mercato Ittico</li>
+                            <li class="tag1">Cruscotto Condizioni</li>
+                            <li class="tag3">Interrogazione Proposte</li>
+                            <li class="tag2">Manovre Massive Automatizate</li>
+                            <li class="tag4">Moduli bilanci</li>
+                        </ul>
+                    </div>
+                    <span class="app-footer">
+                        5 applicazioni <i class="fa fa-arrow-circle-right"></i>
+                    </span>
+                </div>
+                <div class="app-group center-block">
+                    Raccolta e impieghi
+                </div>
+            </div>
+            <div class="app-container">
+                <div class="app-wrap center-block bg-white">
+                    <div class="app-content">
+                        <div class="calendar-day">{{today | date: 'EEEE'}}</div>
+                        <div class="calendar-date">{{today | date: 'dd'}}</div>
+                    </div>
+                </div>
+                <div class="app-group center-block">
+                    Agenda
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div ng-show="showDetails" class="modal-div" ng-click="showDetails = false">
+</div>
+<div ng-show="showDetails" class="apps-popup center-block">
+    <div ng-repeat="app in sistemiGovernoApps" class="app-container" style="z-index:999">
+        <div class="app-wrap center-block bg-white">
+
+        </div>
+        <div class="app-group center-block">
+            {{app.name}}
+        </div>
+    </div>
+</div>

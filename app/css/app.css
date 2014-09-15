@@ -1,4 +1,8 @@
 /* app css stylesheet */
+body {
+  background: #E1E1EE !important;
+  overflow: hidden !important;
+}
 
 .menu {
   list-style: none;
@@ -27,4 +31,245 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+.main-section {
+  min-height: 100%;
+  display: block;
+}
+
+.app-container {
+  float: left;
+}
+
+.app-wrap {
+  position: relative;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  border-radius: 30px !important;
+  margin-bottom: 5px;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.247059);
+  cursor: pointer;
+}
+
+.app-wrap .badge {
+  position: absolute !important;
+}
+
+.app-wrap .bcc-icon.bcc-calendar {
+  background-image: url('../img/calendar.png');
+}
+
+.content {
+  background-color: transparent !important;
+}
+
+.app-content {
+  overflow: hidden;
+}
+
+.app-group {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 21px;
+  font-weight: 100;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.247059) 0px 7px 15px;
+}
+
+.app-footer {
+  position: relative;
+  text-align: center;
+  padding: 3px 0;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  -webkit-border-radius: 0 0 30px 30px !important;
+  -moz-border-radius: 0 0 30px 30px !important;
+  border-radius: 0 0 30px 30px !important;
+}
+
+@media (min-width: 768px) {
+  .main-section {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .app-content {
+    height: 94px;
+  }
+
+  .app-container {
+    width: 182px;
+    height:180px;
+  }
+
+  .app-wrap {
+    width: 120px;
+    height:120px;
+  }
+
+  .app-wrap .bcc-icon {
+    background-size: 120px 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-section {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  .app-content {
+    height: 114px;
+  }
+
+  .app-container {
+    width: 200px;
+    height:200px;
+  }
+
+  .app-wrap {
+    width: 140px;
+    height:140px;
+  }
+
+  .app-wrap .bcc-icon {
+    background-size: 140px 140px;
+  }
+}
+
+.calendar-day {
+  text-align: center;
+  color: red;
+  font-size: 25px;
+  font-weight: 100;
+  padding-top: 5px;
+}
+
+.calendar-date {
+  text-align: center;
+  font-size: 88px;
+  font-weight: 100;
+  line-height: 73px;
+}
+
+/* tag cloud*/
+.tags ul {
+  padding: .5em 10px;
+  text-align: center;
+}
+
+.tags li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+
+.tag1{font-size:60%;}
+.tag2{font-size:80%;}
+.tag3{font-size:100%;}
+.tag4{font-size:120%;}
+.tag5{font-size:140%;}
+
+/* Backgrounds */
+.bg-white {
+  background-color: white;
+}
+
+.bg-gradient-green {
+  background: -webkit-linear-gradient(top, #73ce7a, #10ac1b);
+}
+
+.desktopLogo {
+  color: white;
+  font-size: 25px;
+  font-weight: 100;
+  padding: 10px;
+}
+
+.user-info {
+  position:absolute;
+  top: 0px;
+  right:80px;
+  height: 44px;
+}
+
+.user-info .dropdown {
+  height: 22px;
+  top:50%;
+  right: 20px;
+}
+
+.cursor-hand {
+  cursor: pointer;
+}
+
+.modal-div {
+  background-color: black;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  opacity: .2;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.blur-content {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.apps-popup {
+  -webkit-overflow-scrolling: touch;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  border-radius: 30px !important;
+  margin-bottom: 5px;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.247059);
+  background-color:rgba(0, 0, 0, 0.3);
+  overflow: auto; 
+  width: 80%;
+  height: 80%;
+  position:absolute;
+  top:50px;
+  left:10%;
+  z-index: 101;
+  padding-top: 20px;
+}
+
+.apps-popup::-webkit-scrollbar
+{
+ display: none;
+}
+
+.apps-popup, .modal-div {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
+}
+
+.apps-popup.ng-hide {
+  -webkit-transition:all linear .2s;
+  -moz-transition:all linear .2s;
+  -o-transition:all linear .2s;
+  transition:all linear .2s;
+  height: 200px;
+  width: 200px;
+  opacity: 0;
+  top:50px;
+  left:50px;
+}
+
+.modal-div.ng-hide {
+  opacity: 0;
 }
