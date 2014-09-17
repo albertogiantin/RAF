@@ -1,7 +1,11 @@
 /* app css stylesheet */
 body {
   background: #E1E1EE !important;
-  overflow: hidden !important;
+}
+
+body::-webkit-scrollbar
+{
+ display: none;
 }
 
 .menu {
@@ -115,6 +119,12 @@ body {
   .app-wrap .bcc-icon {
     background-size: 120px 120px;
   }
+
+  .calendar-date {
+    font-size: 77px;
+    line-height: 51px;
+  }
+
 }
 
 @media (min-width: 992px) {
@@ -140,6 +150,11 @@ body {
   .app-wrap .bcc-icon {
     background-size: 140px 140px;
   }
+
+  .calendar-date {
+    font-size: 88px;
+    line-height: 73px;
+  }
 }
 
 .calendar-day {
@@ -152,9 +167,7 @@ body {
 
 .calendar-date {
   text-align: center;
-  font-size: 88px;
   font-weight: 100;
-  line-height: 73px;
 }
 
 /* tag cloud*/
@@ -251,7 +264,7 @@ body {
  display: none;
 }
 
-.apps-popup, .modal-div {
+.apps-popup.ng, .modal-div {
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
   -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
   -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s;
@@ -259,10 +272,10 @@ body {
 }
 
 .apps-popup.ng-hide {
-  -webkit-transition:all linear .2s;
-  -moz-transition:all linear .2s;
-  -o-transition:all linear .2s;
-  transition:all linear .2s;
+  -webkit-transition:all linear .1s;
+  -moz-transition:all linear .1s;
+  -o-transition:all linear .1s;
+  transition:all linear .1s;
   height: 200px;
   width: 200px;
   opacity: 0;
@@ -273,3 +286,19 @@ body {
 .modal-div.ng-hide {
   opacity: 0;
 }
+
+.apps-container-view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index:999;
+}
+
+.moveout {
+  top:-10000px !important;
+  left:-10000px !important;
+  display: none;
+}
+

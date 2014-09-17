@@ -2,29 +2,47 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-	.controller('ApplicationsCtrl', ['$scope',
-		function($scope) {
-			$scope.today = new Date();
+app.controller('ApplicationsCtrl', ['$scope', '$location', 'applicationsList', 'selectedApplication',
+	function($scope, $location, applicationsList, selectedApplication) {
+		$scope.today = new Date();
 
-			$scope.showDetails = false;
+		$scope.showDetails = false;
+		$scope.showApp = false;
 
-			$scope.sistemiGovernoApps = [
-			{name: 'Profilo Cliente', tagClass:'tag1'},
-			{name: 'Profilo Gestore', tagClass:'tag2'},
-			{name: 'Profilo Filiale', tagClass:'tag4'},
-			{name: 'Gestione Campagna', tagClass:'tag2'},
-			{name: 'Profilo Prodotto', tagClass:'tag3'},
-			{name: 'DAG', tagClass:'tag2'},
-			{name: 'Controllo di Gestione', tagClass:'tag1'},
-			{name: 'Economato Centri di Costo', tagClass:'tag3'},
-			{name: 'RAF', tagClass:'tag2'},
-			{name: 'Budget Web', tagClass:'tag4'}
-			];
+		$scope.applicationsList = applicationsList;
+		$scope.openedApps = openedApplications;
+		$scope.selectedGroup = null;
+
+		$scope.openGroup = function(group) {
+			$scope.selectedGroup = group;
+			$scope.showDetails = true;
 		}
-	])
-	.controller('MyCtrl2', ['$scope',
-		function($scope) {
 
+		$scope.showApplication = function(appToShow) {
+			var map = new Map();
+			map.fromArray(openedApplications, 'appId');
+
+			if (map.containsKey(appToShow.appId)) {
+				console.log("Application already opened");
+				$scope.showDetails = false;
+				openApp(appToShow.appId);
+			} else {
+				$location.path('/openApplication/' + appToShow.appId).replace();
+			}
+		};
+
+		if (selectedApplication) {
+			$scope.openedApps.push(selectedApplication);
+			$scope.showApp = true;
+			openApp(selectedApplication.appId);
 		}
-	]);
+
+	}
+]);
+
+
+app.controller('MyCtrl2', ['$scope',
+	function($scope) {
+
+	}
+]);

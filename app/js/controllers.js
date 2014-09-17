@@ -5,6 +5,7 @@
 angular.module('myApp.controllers', [])
 	.controller('AdeguatezzaComplessivaCtrl', ['$scope',
 		function($scope) {
+
 			var chart1 = {};
 			chart1.type = "PieChart";
 			chart1.data = {
