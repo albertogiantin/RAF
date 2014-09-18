@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       server: '.tmp'
     },
     useminPrepare: {
-      html: ['<%= path.app %>/index.html','<%= path.app %>/desktop.html'],
+      html: ['<%= path.app %>/raf.html','<%= path.app %>/index.html'],
       options: {
         dest: '<%= path.dist %>'
       }

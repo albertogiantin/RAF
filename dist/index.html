@@ -12,95 +12,25 @@
     <title>My AngularJS App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="stylesheet" href="css/e151f67a.main.css">
+    <link rel="stylesheet" href="css/c9661db4.main-desktop.css">
 
 
 </head>
 
 <body class="skin-blue">
-    <!-- header logo: style can be found in header.less -->
-    <header class="header">
-        <a class="logo" style="cursor:pointer" onclick="parent.openHome('raf')">
-            <!-- Add the class icon to your logo image or logo icon to add the margining -->
-            Risk Appetite Framework
-        <a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span>Mario Rossi <i class="caret"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header bg-light-blue">
-                                <img src="img/avatar5.png" class="img-circle" alt="User Image">
-                                <p>
-                                    Mario Rossi
-                                    <small>Bcc Sistemi Informatici</small>
-                                </p>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </a></a></header>
     <div class="wrapper row-offcanvas row-offcanvas-left">
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="left-side sidebar-offcanvas">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu">
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="fa fa-dashboard"></i> 
-                            <span>Adeguatezza complessiva</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <span>Obbiettivi di rischio</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Singoli profili</a>
-                            </li>
-                            <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Obiettivi di rischio</a>
-                            </li>
-                            <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Coefficente patrimoniale di base</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
+        <!-- Main section. Contains the content of the page -->
+        <section ng-view="">
 
-        <!-- Right side column. Contains the navbar and content of the page -->
-        <aside class="right-side" ng-view="">
-
-        </aside>
+        </section>
         <!-- /.right-side -->
     </div>
     <!-- ./wrapper -->
-    <script src="js/9a59eb0a.modules.js"></script>
+    <script src="js/a2398694.modules-desktop.js"></script>
 
-    <script src="js/5003bd07.scripts.js"></script>
+    <script src="js/7c12c327.scripts-desktop.js"></script>
 </body>
 
 </html>

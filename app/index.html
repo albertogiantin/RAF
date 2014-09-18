@@ -12,11 +12,13 @@
     <title>My AngularJS App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- build:css css/main.css -->
+    <!-- build:css css/main-desktop.css -->
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/animations.css" />
     <!-- bootstrap 3.0.2 -->
     <link href="bower_components/admin-lte/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- font Awesome -->
@@ -39,93 +41,24 @@
 </head>
 
 <body class="skin-blue">
-    <!-- header logo: style can be found in header.less -->
-    <header class="header">
-        <a class="logo" style="cursor:pointer" onclick="parent.openHome('raf')">
-            <!-- Add the class icon to your logo image or logo icon to add the margining -->
-            Risk Appetite Framework
-        <a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span>Mario Rossi <i class="caret"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header bg-light-blue">
-                                <img src="img/avatar5.png" class="img-circle" alt="User Image" />
-                                <p>
-                                    Mario Rossi
-                                    <small>Bcc Sistemi Informatici</small>
-                                </p>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <div class="wrapper row-offcanvas row-offcanvas-left">
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="left-side sidebar-offcanvas">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu">
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="fa fa-dashboard"></i> 
-                            <span>Adeguatezza complessiva</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <span>Obbiettivi di rischio</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Singoli profili</a>
-                            </li>
-                            <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Obiettivi di rischio</a>
-                            </li>
-                            <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Coefficente patrimoniale di base</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
+        <!-- Main section. Contains the content of the page -->
+        <section ng-view="">
 
-        <!-- Right side column. Contains the navbar and content of the page -->
-        <aside class="right-side" ng-view="">
-
-        </aside>
+        </section>
         <!-- /.right-side -->
     </div>
     <!-- ./wrapper -->
-    <!-- build:js js/modules.js -->
+    <!-- build:js js/modules-desktop.js -->
     <!-- jQuery 2.1.1 -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.1 -->
     <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
     <!-- angularjs -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-i18n/angular-locale_it-it.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <!-- angular-google-chart -->
     <script src="bower_components/angular-google-chart/ng-google-chart.js" type="text/javascript"></script>
@@ -153,12 +86,14 @@
     <script src="bower_components/admin-lte/js/AdminLTE/demo.js" type="text/javascript"></script>
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) js/scripts.js -->
-    <script src="js/app.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
+    <!-- build:js({.tmp,app}) js/scripts-desktop.js -->
+    <script src="js/desktop/resources/utils.js"></script>
+    <script src="js/desktop/mocks.js"></script>
+    <script src="js/desktop/app.js"></script>
+    <script src="js/desktop/services.js"></script>
+    <script src="js/desktop/controllers.js"></script>
+    <script src="js/desktop/filters.js"></script>
+    <script src="js/desktop/directives.js"></script>
     <!-- endbuild -->
 </body>
 
