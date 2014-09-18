@@ -14,19 +14,19 @@ app.config(['$routeProvider',
       templateUrl: 'partials/applications.html',
       controller: 'ApplicationsCtrl',
       resolve: applicationsResolve
-    })
-      .when('/openApplication/:applicationId', {
-        templateUrl: 'partials/applications.html',
-        controller: 'ApplicationsCtrl',
-        resolve: applicationsResolve
-      })
-      .when('/view2', {
-        templateUrl: 'partials/partial2.html',
-        controller: 'MyCtrl2'
-      })
-      .otherwise({
-        redirectTo: '/applicationsView'
-      });
+    }).when('/loginView', {
+      templateUrl: 'partials/login.html',
+      controller: 'LoginCtrl'
+    }).when('/openApplication/:applicationId', {
+      templateUrl: 'partials/applications.html',
+      controller: 'ApplicationsCtrl',
+      resolve: applicationsResolve
+    }).when('/view2', {
+      templateUrl: 'partials/partial2.html',
+      controller: 'MyCtrl2'
+    }).otherwise({
+      redirectTo: '/loginView'
+    });
   }
 ]);
 
@@ -37,7 +37,7 @@ var applicationsResolve = {
     }
   ],
   selectedApplication: ['$route', 'ApplicationService',
-    function($route,ApplicationService) {
+    function($route, ApplicationService) {
       return ApplicationService.get($route.current.params.applicationId);
     }
   ]

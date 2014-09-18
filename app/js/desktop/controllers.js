@@ -41,8 +41,13 @@ app.controller('ApplicationsCtrl', ['$scope', '$location', 'applicationsList', '
 ]);
 
 
-app.controller('MyCtrl2', ['$scope',
-	function($scope) {
+app.controller('LoginCtrl', ['$scope', '$location',
+	function($scope, $location) {
+		$scope.nomeUtente = '';
+		$scope.pwd = '';
 
+		$scope.login = function() {
+			$location.path('/applicationsView').replace();
+		}
 	}
 ]);

@@ -1,3 +1,29 @@
+.apps-popup.ng-hide {
+-webkit-transform-origin: 50% 100%;
+  -webkit-animation: rotateTopSideFirst .3s both ease-in;
+  -moz-transform-origin: 50% 100%;
+  -moz-animation: rotateTopSideFirst .3s both ease-in;
+  transform-origin: 50% 100%;
+  animation: rotateTopSideFirst .3s both ease-in;
+}
+
+.apps-popup.ng-hide-remove {
+-webkit-transform-origin: 50% 100%;
+  -webkit-animation: scaleFadeIn .3s both ease-in;
+  -moz-transform-origin: 50% 100%;
+  -moz-animation: scaleFadeIn .3s both ease-in;
+  transform-origin: 50% 100%;
+  animation: scaleFadeIn .3s both ease-in;
+}
+
+.pt-page-rotateBottomSideFirst {
+	-webkit-animation: rotateBottomSideFirst .5s both ease-in;
+	-moz-transform-origin: 50% 100%;
+	-moz-animation: rotateBottomSideFirst .5s both ease-in;
+	transform-origin: 50% 100%;
+	animation: rotateBottomSideFirst .5s both ease-in;
+}
+
 .pt-page-rotateTopSideFirst {
 	-webkit-transform-origin: 50% 100%;
 	-webkit-animation: rotateTopSideFirst .6s both ease-in;
@@ -22,14 +48,6 @@
 
 /*******************************************************************************************************/
 
-.pt-page-rotateBottomSideFirst {
-	-webkit-animation: rotateBottomSideFirst .5s both ease-in;
-	-moz-transform-origin: 50% 100%;
-	-moz-animation: rotateBottomSideFirst .5s both ease-in;
-	transform-origin: 50% 100%;
-	animation: rotateBottomSideFirst .5s both ease-in;
-}
-
 @-webkit-keyframes rotateBottomSideFirst {
 	0% { -webkit-transform: scale(0.8) translate3d(0,-200px,-200px); opacity: .8; -webkit-animation-timing-function: ease-out; }
 	100% { -webkit-transform: rotateX(10deg) scale(1) translate3d(0, 0px, 0px); opacity:1; }
@@ -39,6 +57,21 @@
 	100% { -moz-transform: rotateX(10deg) scale(1) translate3d(0, 0px, 0px); opacity:1; }
 }
 @keyframes rotateBottomSideFirst {
+	0% { transform: scale(0.8) translate3d(0,-200px,-200px); opacity: .8; animation-timing-function: ease-out; }
+	100% { transform: rotateX(10deg) scale(1) translate3d(0, 0px, 0px); opacity:1; }
+}
+
+/*******************************************************************************************************/
+
+@-webkit-keyframes scaleFadeIn {
+	0% { -webkit-transform: scale(0.8) translate3d(0,-200px,-200px); opacity: .8; -webkit-animation-timing-function: ease-out; }
+	100% { scale(1) translate3d(0, 0px, 0px); opacity:1; }
+}
+@-moz-keyframes scaleFadeIn {
+	0% { -moz-transform: scale(0.8) translate3d(0,-200px,-200px); opacity: .8; -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: rotateX(10deg) scale(1) translate3d(0, 0px, 0px); opacity:1; }
+}
+@keyframes scaleFadeIn {
 	0% { transform: scale(0.8) translate3d(0,-200px,-200px); opacity: .8; animation-timing-function: ease-out; }
 	100% { transform: rotateX(10deg) scale(1) translate3d(0, 0px, 0px); opacity:1; }
 }
